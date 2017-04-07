@@ -6,13 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class pengguna extends Model
 {
-    protected $table ='pengguna';
-    protected $fillable =['username','password'];
+	protected $table ='pengguna';
+	protected $fillable =['username','password'];
 
-    public function mahasiswa(){
-    	return $this->hasOne(mahasiswa::class,'pengguna_id');
-    }
-    public function dosen(){
-    	return $this->hasOne(dosen::class, 'pengguna_id');
-    }
+	public function mahasiswa(){
+		return $this->hasOne(mahasiswa::class);
+	}
+
+	public function dosen(){
+		return $this->hasOne(dosen::class);
+	}
+	/*
+	public function peran(){
+		return $this ->belongsToMany(peran::class);
+	}
+	*/
 }
