@@ -11,7 +11,7 @@
 	<table class="table">
 		<tr>
 			<td>Id:</td>
-			<td>{{$matakuliah->Id}}</td>
+			<td>{{$matakuliah->id}}</td>
 		</tr>
 
 		<tr>

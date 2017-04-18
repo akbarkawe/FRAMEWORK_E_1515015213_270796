@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PenggunaRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -18,7 +19,10 @@ class penggunacontroller extends Controller
     public function tambah(){
     	return view('pengguna.tambah');
     }
-    public function simpan(Request $input){
+    public function simpan(PenggunaRequest $input){
+        $this->validate($input,[
+            'username'=>'required',
+            'password'=>'required',]);
     	$pengguna = new pengguna;
     	$pengguna->username=$input->username;
         $pengguna->password=$input->password;
@@ -35,7 +39,7 @@ public function lihat($id){
         return view('pengguna.lihat')->with(array('pengguna'=>$pengguna));
     }
 
-    public function update($id, Request $input){
+    public function update($id, PenggunaRequest $input){
         $pengguna = pengguna::find($id);
         $pengguna ->username=$input->username;
         $pengguna ->password=$input->password;
