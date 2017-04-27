@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MahasiswaRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 use App\mahasiswa;
 use App\pengguna;
 use Input;

@@ -84,8 +84,13 @@
                                 <li><a href="{{url('ruangan')}}">ruangan</a></li>
                                 <li><a href="{{url('matakuliah')}}">matakuliah</a></li>
                             </ul>
-                    </li>
-                </ul>
+                      </li>
+                    <li class="dropdown active">
+
+<a href="{{ url('logout')}}">Logout</a>
+
+                      </li>
+             </ul>
             </div><!--/.nav-collapse -->
         </div>
        </nav>
@@ -99,6 +104,7 @@
             @endif
             @yield('container')
        </div>
+
        <nav class="navbar navbar-default navbar-fixed-bottom">
            <footer class="container">
                <!   please dont delete this >
